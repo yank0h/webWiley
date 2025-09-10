@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --spacing-small: 8px;
+      --spacing-medium: 16px;
+      --spacing-large: 24px;
+      --spacing-xlarge: 32px;
+    }
+
+    body {
+      font-family: "Comic Relief", system-ui;
+      margin: var(--spacing-medium);
+    }
+
+    .color-box {
+      height: 7rem;
+      width: 7rem;
+      margin: var(--spacing-small);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #000;
+      font-size: 0.8rem;
+    }
+
+    #color1 { background-color: #30011E; color: white; }
+    #color2 { background-color: #d7fcd4; }
+    #color3 { background-color: #b6cca1; }
+    #color4 { background-color: #b68f40; }
+
+    h1 { font-size: 2rem; margin-bottom: var(--spacing-small); }
+    h2 { font-size: 1.5rem; margin-bottom: var(--spacing-small); }
+    h3 { font-size: 1.2rem; margin-bottom: var(--spacing-small); }
+    p { margin-bottom: var(--spacing-medium); }
+    small { font-size: 0.75rem; }
+
+    a {
+      color: #30011E;
+    }
+    a:hover { text-decoration: underline; }
+    a:visited { color: #5f1f4a; }
+    a:focus { outline: 2px solid #b68f40; }
+
+    button {
+      background: #30011E;
+      color: white;
+      padding: var(--spacing-small) var(--spacing-medium);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover { background: #5f1f4a; }
+    button:focus { outline: 2px solid #b68f40; }
+
+    input {
+      margin-top: var(--spacing-small);
+      padding: var(--spacing-small);
+      border: 1px solid #d7fcd4;
+      border-radius: 4px;
+    }
+
+    .spacing-demo {
+      background: #d7fcd4;
+      margin-bottom: var(--spacing-small);
+      padding: var(--spacing-small);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="color-box" id="color1">#30011E 18.28:1</div>
+  <div class="color-box" id="color2">#d7fcd4 18.76:1</div>
+  <div class="color-box" id="color3">#b6cca1 12.14:1</div>
+  <div class="color-box" id="color4">#b68f40 6.99:1</div>
+
+  <h1>Heading 1</h1>
+  <h2>Heading 2</h2>
+  <h3>Heading 3</h3>
+  <p>Body paragraph text using Comic Relief.</p>
+  <small>Small text example for captions.</small>
+
+  <h2>Spacing Demo</h2>
+  <div class="spacing-demo" style="margin-bottom: var(--spacing-small);">Small margin</div>
+  <div class="spacing-demo" style="margin-bottom: var(--spacing-medium);">Medium margin</div>
+  <div class="spacing-demo" style="margin-bottom: var(--spacing-large);">Large margin</div>
+  <div class="spacing-demo" style="margin-bottom: var(--spacing-xlarge);">XL margin</div>
+
+  <h2>Interactive Components</h2>
+  <button>Click Me</button>
+  <p><a href="#">This is a link</a></p>
+  <label for="name">Form input</label>
+  <input type="text" id="name" placeholder="uhh">
+</body>
+</html>
