@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+        }
+        .expand-btn {
+            border-radius: 50%;
+            height: 4rem;
+            width: 4rem;
+            font-size: 2rem;
+        }
+        .expand-btn:hover, .expand-btn:focus {
+            color: #1976d2;
+            background-color: #01162b;
+        }
+        .card-content {
+            display: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 3rem;
+        }
+
+</style>
+
+<body>
+    <div class="card">
+        <div class="card-header">
+          <h3>Community Garden Project</h3>
+          <button class="expand-btn" aria-label="Expand card">+</button>
+        </div>
+        <div class="card-content">
+          <p class="summary">Join neighbors in creating a shared growing space...</p>
+          <div class="details hidden">
+            <p>Meeting every Saturday at 10am. Tools provided. All skill levels welcome.</p>
+            <p>Contact: garden@community.org</p>
+          </div>
+        </div>
+      </div>
+      <script src="script.js"></script>
+</body>
+
+</html>
