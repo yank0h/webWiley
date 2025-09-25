@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>photo gallery filterable</title>
+
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0;}
+
+    .gallery-container {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-template-areas:
+        "header header"
+        "nav    sidebar"
+        "main   sidebar";
+      gap: 1rem;
+      padding: 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .gallery-header  { grid-area: header; font-size: 1.77rem;}
+    .gallery-nav     { grid-area: nav; display: flex; gap: .5rem; flex-wrap: wrap; }
+    .gallery-sidebar { grid-area: sidebar; padding: 1rem; border: 1px solid #ddd;}
+
+    .gallery-nav button {
+      padding: .5rem .75rem;
+      border: 1px solid #ddd;
+      background: #fff;
+      cursor: pointer;
+    }
+
+    .gallery-grid {
+      grid-area: main;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .photo-card {
+      height: 200px;
+      display: grid;
+      place-items: center;
+      border: 1px solid #ddd;
+      background: #fff;
+    }
+
+    .photo-card.featured {
+      height: 300px;
+      grid-column: span 2;
+    }
+
+    @media (max-width: 700px) {
+      .gallery-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "header"
+          "nav"
+          "main"
+          "sidebar";
+      }
+      .photo-card.featured { grid-column: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="gallery-container">
+    <header class="gallery-header">Photo Gallery</header>
+
+    <nav class="gallery-nav">
+      <button>All</button>
+      <button>Nature</button>
+      <button>Architecture</button>
+    </nav>
+
+    <main class="gallery-grid">
+      <div class="photo-card" data-category="nature">Photo 1 'nature'</div>
+      <div class="photo-card" data-category="architecture">Photo 2 'arch'</div>
+      <div class="photo-card" data-category="nature">Photo 3 'nature'</div>
+      <div class="photo-card featured" data-category="nature">Featured Photo 'nature'</div>
+      <div class="photo-card" data-category="architecture">Photo 5 'arch'</div>
+      <div class="photo-card" data-category="nature">Photo 6 'nature'</div>
+    </main>
+
+    <aside class="gallery-sidebar">Filter Options</aside>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
