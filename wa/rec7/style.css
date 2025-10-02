@@ -59,13 +59,6 @@ body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial
     }
   }
 
-  #lang-toggle {
-    padding: 0.4rem 0.6rem;
-    border: 1px solid #ddd;
-    background: #fff;
-    cursor: pointer;
-  }
-  #lang-toggle:focus { outline: 2px solid #000; outline-offset: 2px; }
 
   * { box-sizing: border-box; }
     body { margin: 0;}
