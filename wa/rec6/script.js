@@ -10,9 +10,6 @@ if (toggle && menu) {
 }
 
 
-
-
-
 const textFilterButtons = document.querySelectorAll('.gallery-nav button');
 const textCards = document.querySelectorAll('.text-card');
 

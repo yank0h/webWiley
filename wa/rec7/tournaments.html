@@ -15,28 +15,30 @@
 <body>
     <header>
         <nav class="main-nav">
-            <div class="nav-brand">Front Range Table Tennis</div>
+            <div class="nav-brand" data-i18n="site.brand">Front Range Table Tennis</div>
             <button class="nav-toggle" aria-label="Toggle navigation menu">
             <span></span>
             <span></span>
             <span></span>
             </button>
             <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="resources.html">Resources</a></li>
-                <li><a href="forums.html">Forums</a></li>
-                <li><a href="tournaments.html">Tournaments</a></li>
+              <li><a data-i18n="nav.home" href="index.html">Home</a></li>
+              <li><a data-i18n="nav.resources" href="resources.html">Resources</a></li>
+              <li><a data-i18n="nav.forums" href="forums.html">Forums</a></li>
+              <li><a data-i18n="nav.tournaments" href="tournaments.html">Tournaments</a></li>
+              <li><button id="lang-toggle" type="button" aria-pressed="false" title="Switch language">中文</button></li>
             </ul>
+            
         </nav>
 
     </header>
 
-    <nav class="gallery-nav" aria-label="Filter by state">
-        <button>All</button>
-        <button>colorado</button>
-        <button>florida</button>
-        <button>georgia</button>
-      </nav>
+    <nav class="gallery-nav" aria-label="Filter by state" role="group">
+      <button data-filter="all"      data-i18n="tournaments.filter.all">All</button>
+      <button data-filter="colorado" data-i18n="tournaments.filter.co">colorado</button>
+      <button data-filter="florida"  data-i18n="tournaments.filter.fl">florida</button>
+      <button data-filter="georgia"  data-i18n="tournaments.filter.ga">georgia</button>
+    </nav>
       
       <main class="gallery-grid">
         <!-- COLORADO -->

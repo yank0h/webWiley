@@ -29,104 +29,118 @@ body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial
   background: rgba(0,0,0,0.08);
 }
 
-.nav-toggle {
-    display:none;
-}
+.nav-toggle { display: none; }
 
 .nav-toggle span {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: #111;
-    margin: 4px 0;
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #111;
+  margin: 4px 0;
 }
-  
 
-  @media (max-width: 768px) {
-    .nav-toggle {
-        display: block;
-    }
+.nav-brand {
+  font-weight: bolder;
+  font-size: large;
+}
 
-    .nav-menu {
-      display: none;
-    }
-
-    .nav-menu.active { 
-      display: flex; 
-      flex-direction: column; 
-      gap: 0.5rem;
-      padding-top: 0.5rem;
-    }
+@media (max-width: 768px) {
+  .nav-toggle { display: block; }
+  .nav-menu { display: none; }
+  .nav-menu.active { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 0.5rem;
+    padding-top: 0.5rem;
   }
+}
 
+#lang-toggle {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+}
+#lang-toggle:focus { outline: 2px solid #000; outline-offset: 2px; }
 
-  * { box-sizing: border-box; }
-    body { margin: 0;}
+* { box-sizing: border-box; }
+body { margin: 0; }
 
-    .gallery-container {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      grid-template-areas:
-        "header header"
-        "nav    sidebar"
-        "main   sidebar";
-      gap: 1rem;
-      padding: 1rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+.gallery-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas:
+    "header header"
+    "nav    sidebar"
+    "main   sidebar";
+  gap: 1rem;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-    .gallery-header  { grid-area: header; font-size: 1.77rem;}
-    .gallery-nav { 
-      grid-area: nav; 
-      display: flex; 
-      gap: .5rem; 
-      flex-wrap: wrap; 
-      margin-top: 1rem;
-    }
-    .gallery-sidebar { grid-area: sidebar; padding: 1rem; border: 1px solid #ddd;}
+.gallery-header  { grid-area: header; font-size: 1.77rem; }
+.gallery-nav { 
+  grid-area: nav; 
+  display: flex; 
+  gap: .5rem; 
+  flex-wrap: wrap; 
+  margin-top: 1rem;
+}
+.gallery-sidebar { grid-area: sidebar; padding: 1rem; border: 1px solid #ddd; }
 
-    .gallery-nav button {
-      padding: .5rem .75rem;
-      border: 1px solid #ddd;
-      background: #fff;
-      cursor: pointer;
-    }
+.gallery-nav button {
+  padding: .5rem .75rem;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+}
 
-    .gallery-grid {
-      grid-area: main;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-    }
+.gallery-grid {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
 
+.text-card {
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 0.75rem;
+}
 
-    .text-card {
-      border: 1px solid #ddd;
-      background: #fff;
-      padding: 0.75rem;
-    }
-    
-    .text-card h3 {
-      margin: 0 0 0.5rem;
-      font-size: 1rem;
-    }
-    
-    .text-card p {
-      margin: 0;
-      color: #444;
-      line-height: 1.4;
-    }
-    
+.text-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
 
-    @media (max-width: 700px) {
-      .gallery-container {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-          "header"
-          "nav"
-          "main"
-          "sidebar";
-      }
-      .photo-card.featured { grid-column: auto; }
-    }
+.text-card p {
+  margin: 0;
+  color: #444;
+  line-height: 1.4;
+}
+
+@media (max-width: 700px) {
+  .gallery-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "sidebar";
+  }
+  .photo-card.featured { grid-column: auto; }
+}
+
+@media (max-width: 1024px) {
+  body.page-forums .gallery-grid,
+  body.page-resources .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  body.page-tournaments .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
