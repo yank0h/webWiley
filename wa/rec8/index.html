@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front Range Table Tennis</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<style>
+    .gallery-grid {
+        margin-top: 1rem;
+        grid-template-columns: 1fr;
+        grid-auto-flow: row;  
+    }
+
+    
+
+</style>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="nav-brand" data-i18n="site.brand">Front Range Table Tennis</div>
+
+            <button class="nav-toggle" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+            </button>
+            <ul class="nav-menu">
+              <li><a data-i18n="nav.home" href="index.html">Home</a></li>
+              <li><a data-i18n="nav.resources" href="resources.html">Resources</a></li>
+              <li><a data-i18n="nav.forums" href="forums.html">Forums</a></li>
+              <li><a data-i18n="nav.tournaments" href="tournaments.html">Tournaments</a></li>
+              <li><button id="lang-toggle" type="button" aria-pressed="false" title="Switch language">中文</button></li>
+            </ul>
+            
+        </nav>
+
+    </header>
+
+    <main>
+        <main id="main" class="gallery-grid" aria-labelledby="h-resources">
+      
+          <section class="text-card" aria-labelledby="h-featured-tournament">
+            <h3 id="h-featured-tournament" data-i18n="home.featuredTournament">Featured Tournament</h3>
+        
+            <ul>
+              <li><strong>NorthSide Fall Classic 2025</strong> — Louisville — 10/11/25</li>
+              <li>Contact: Peter Christofolo — 303-601-3415</li>
+              <li>USATT Level: 1-Star</li>
+            </ul>
+          </section>
+      
+          <section class="text-card" aria-labelledby="h-featured-post">
+            <h3 id="h-featured-post" data-i18n="home.featuredPost">Featured Forum Post</h3>
+            <ul>
+              <li><strong>Chinese or Euro Rubber?</strong></li>
+              <li>Pros &amp; cons for intermediate loopers switching from ESN to tacky sheets.</li>
+            </ul>
+          </section>
+      
+          <section class="text-card" aria-labelledby="h-featured-creator">
+            <h3 id="h-featured-creator" data-i18n="home.featuredCreator">Featured Creator</h3>
+            <ul>
+              <li><a href="https://www.youtube.com/@AdamBobrow" target="_blank" rel="noopener">Adam Bobrow — YouTube Channel</a></li>
+            </ul>
+          </section>
+        </main>
+      </main>
+      
+
+
+    <script src="script.js"></script>
+</body>
+</html>
