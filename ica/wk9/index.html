@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            height: 1rem;
+            width: 1rem;
+            border: 2px black solid;
+            background-color: green;
+            animation-duration: .5s;
+            animation-iteration-count: 8;
+            position: relative;
+            transition-property: width;
+            transition-duration: .1s;
+        }
+
+        .box:hover {
+            width: 4rem;
+            height: 4rem;
+        }
+        
+        .bomb {
+            height: 0px;
+            width: 0px;
+            border: 0px black solid;
+            background-color: rgb(46, 46, 46);
+            animation-duration: 5s;
+            position: relative;
+        }
+        
+            @keyframes moving-box {
+                from {
+                    left: 0px;
+                    top: 0px;
+                    background-color: black;
+                }
+
+                50% {
+                    left: 1rem;
+                    top: 0;
+                }
+
+                70% {
+                    left: 1rem;
+                    top: 1rem;
+                }
+
+                71% {
+                    left: 1rem;
+                    top: 1rem;
+                }
+
+                80% {
+                    left: 0px;
+                    top: 1rem;
+                }
+
+                to {
+                    left: 0px;
+                    top: 0px;
+                    background-color: red;
+                }
+            }
+
+            @keyframes bombard {
+                from {
+                    left: 1000px;
+                    top: 1000px;
+                    height: 1rem;
+                    width: 1rem;
+                    background-color: rgb(63, 63, 63);
+                    border-color: black;
+
+                }
+
+
+                80% {
+                    
+                    left: 1000px;
+                    top: 1000px;
+                    height: 1rem;
+                    width: 1rem;
+                    background-color: rgb(63, 63, 63);
+                    border-color: black;
+
+                }
+
+                97% {
+                    left: 1px;
+                    top: 1px;
+                    height: 1rem;
+                    width: 1rem;
+                    background-color: rgb(63, 63, 63);
+                    border-color: black;
+
+                }
+
+                98% {
+                    left: 0px;
+                    top: 0px;
+                    background-color: orange;
+                    border-color: red;
+                    height: 1rem;
+                    width: 1rem;
+                }
+
+                to {
+                    left: 0px;
+                    top: 0px;
+                    background-color: orange;
+                    border-color: red;
+                    height: 10rem;
+                    width: 10rem;
+                }
+
+            }
+
+    </style>
+</head>
+<body>
+    <div style="display: flex; align-items: center;">
+      <h1 style="margin-right: 1rem;">Loading bombardment...</h1>
+      <div class="box" style="animation-name: moving-box;"></div>
+    </div>
+    <div class="bomb" style="animation-name: bombard;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 1s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 2s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 3s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 4s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 5s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 6s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 7s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 8s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 9s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 10s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 11s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 12s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 13s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 14s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 15s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 16s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 17s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 18s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 19s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 20s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 21s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 22s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 23s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 24s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 25s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 26s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 27s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 28s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 29s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 30s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 31s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 32s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 33s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 34s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 35s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 36s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 37s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 38s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 39s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 40s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 41s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 42s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 43s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 44s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 45s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 46s;"></div>
+    <div class="bomb" style="animation-name: bombard; animation-delay: 47s;"></div>
+
+    
+</body>
+</html>
