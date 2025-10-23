@@ -11,6 +11,11 @@
     <h1>Quote Creator</h1>
     <button id="generateBtn">generate</button>
     <div id="result" aria-live="polite"></div>
+    <h2>Include two short paragraphs at the bottom of the page (in styled p elements that match the rest of the page) explaining:</h2>
+    <h3>What your extension is (to make the LAs' lives easier)</h3>
+    <p>   This extension is a simple creative tool that generates confusing quotes and attributes them to made-up people with ridiculous names. I connected a public GitHub Pages front-end to a secure API through a Cloudflare Worker. My extra "feature" exists within cloudflares platoform and takes in my request, ensures it is from a valid url (limited to my own github pages origin) and returns the output from openai. Even within cloudflare my key is stored securely inside of a secret variable.    </p>
+    <h3>How you could imagine using an API in your critique project (that you planned last week), and what sort of API/data you would use. This isn't a commitment to do that. I'm just asking you to imagine.</h3>
+    <p>   In my critique project I plan on using a similar system that harnesses the openai API ofc I assume all risk and api cost. In the case of my "spotify playlist generator" I will be querying gpt with a vibe given by the user and it will ouput a json formatted list of songs. In turn I will parse that list and display in a spotify styled way.</p>
   </main>
   <script src="script.js" defer></script>
 </body>
