@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Baby Name Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <main class="wrap">
+    <h1>Baby Name Generator</h1>
+
+    <div class="card">
+      <p class="label">Current baby name:</p>
+      <div id="currentName" class="name">Loading…</div>
+
+      <label for="feedback" class="label">baby name feedback</label>
+      <textarea id="feedback" placeholder="baby name feedback"></textarea>
+
+      <button id="generateBtn">generate</button>
+    </div>
+
+    <div class="card">
+      <div class="row">
+        <h2>Past baby names</h2>
+        <div class="spacer"></div>
+        <button id="exportBtn" class="ghost">export .txt</button>
+        <button id="clearBtn" class="ghost danger">clear</button>
+      </div>
+      <ul id="historyList" class="list"></ul>
+    </div>
+    <div id="srAnnouncer" class="sr-only" aria-live="assertive" aria-atomic="true"></div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
