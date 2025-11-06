@@ -1,6 +1,8 @@
 const WORKER_URL = "https://shiny-union-6556.wiya8806.workers.dev/";
 const MODEL = "gpt-4.1-mini";
 const LS_KEY = "babyNamesHistory";
+const srAnnouncer = document.getElementById("srAnnouncer");
+
 
 const currentNameEl = document.getElementById("currentName");
 const feedbackEl     = document.getElementById("feedback");
@@ -109,6 +111,8 @@ async function generateName() {
 
     const name = await requestName(prev, feedback);
     currentNameEl.textContent = name;
+    srAnnouncer.textContent = `New baby name: ${name}`;
+
 
     if (name && name !== "(no name returned)") {
       history.push(name);
