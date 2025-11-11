@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+    <title>summer</title>
+</head>
+<body>
+    
+    <a-scene>
+        <a-assets>
+            <img id="sky1" src="assets/globe.jpg">
+            <img id="pinktex" src="assets/pinktex.jpg">
+            <img id="ball" src="assets/ball.jpeg">
+        </a-assets>
+
+
+
+        <a-sky src="#sky1"> </a-sky>
+        <a-box position="-2 0.5 -3" rotation="0 45 0" material="src: #pinktex; repeat: 2 2"></a-box>        
+        <a-sphere position="2 .5 -3" radius="1wa" height="1.5" rotation="0 180 0" color="#fffaf0" material="src: #ball"></a-sphere>
+        <a-entity position="0 0 -3">
+            <a-cone position="0 0.5 0"
+                    radius-bottom="0.25"
+                    radius-top="0.02"
+                    height="1"
+                    rotation="180 0 0"
+                    color="#b97a57"></a-cone>
+            <a-sphere position="0 1.1 0" radius="0.33" color="#fffaf0"></a-sphere>
+          </a-entity>
+          
+</a-sphere>
+    </a-scene>
+    
+</body>
+</html>
