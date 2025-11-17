@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>NMD – New Music Discovery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="header">
+      <h1>NMD</h1>
+      <p class="subtitle">New Music Discovery</p>
+    </header>
+
+    <div class="card">
+      <p id="promptLabel" class="label">
+        Tell me songs, moods, or genres to inspire a new playlist.
+      </p>
+      <textarea
+        id="promptInput"
+        placeholder="Type songs, vibes, or genres you want this playlist inspired by…"
+      ></textarea>
+
+      <div class="row">
+        <button id="generateBtn">Generate playlist</button>
+        <div class="spacer"></div>
+        <button id="resetBtn" class="ghost" disabled>Start a fresh search</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="row">
+        <h2>Current playlist</h2>
+      </div>
+      <ul id="songsList" class="songs-list"></ul>
+    </div>
+
+    <div class="card">
+      <div class="row">
+        <h2>Past searches</h2>
+        <div class="spacer"></div>
+        <button id="clearSessionsBtn" class="ghost danger">clear all</button>
+      </div>
+      <ul id="sessionList" class="list"></ul>
+    </div>
+
+    <div id="srAnnouncer" class="sr-only" aria-live="assertive" aria-atomic="true"></div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
