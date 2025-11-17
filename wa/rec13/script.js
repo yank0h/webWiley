@@ -170,7 +170,7 @@ function parseSongsFromText(raw) {
 
 async function requestPlaylistInitial(inspiration) {
   const systemMsg =
-    "You are a new music discovery assistant. Take the user's description as inspiration for a playlist. Only respond with a JSON array of song objects. Each object must have keys 'title', 'artist', and 'reason'. 'reason' is 1–2 short sentences about why the song belongs in this playlist. Do not include any text outside the JSON.";
+    "You are a new music discovery assistant. Take the user's description as inspiration for a playlist. No matter whether they input songs or a simple descriptive words try to expand the users music taste by recommending music across many different artists with the understanding that they will come back and tell you which they liked and didnt like. Only respond with a JSON array of song objects. Each object must have keys 'title', 'artist', and 'reason'. 'reason' is 1–2 short sentences about why the song belongs in this playlist. Do not include any text outside the JSON.";
   const userMsg = inspiration;
 
   const payload = {
