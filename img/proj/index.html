@@ -4,9 +4,46 @@
     <title>Ping Pong Scene</title>
     <meta name="description" content="Ping Pong OBJ Scene - A-Frame">
     <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+
+    <script>
+      AFRAME.registerComponent('spawn-random-paddles', {
+        schema: {
+          count: {type: 'int', default: 99},
+          maxScale: {type: 'number', default: 10.17}
+        },
+        init: function () {
+          const sceneEl = this.el;
+          const count = this.data.count;
+          const maxScale = this.data.maxScale;
+
+          const minScale = maxScale / 10;
+          const maxRandomScale = maxScale * 0.99;
+
+          for (let i = 0; i < count; i++) {
+            const paddle = document.createElement('a-obj-model');
+            paddle.setAttribute('src', '#paddle-obj');
+
+            const x = (Math.random() - 0.5) * 20;
+            const y = Math.random() * 4 + 0.5;
+            const z = -(Math.random() * 15 + 1);
+
+            paddle.setAttribute('position', `${x} ${y} ${z}`);
+
+            const scale = Math.random() * (maxRandomScale - minScale) + minScale;
+            paddle.setAttribute('scale', `${scale} ${scale} ${scale}`);
+
+            const rotY = Math.random() * 360;
+            paddle.setAttribute('rotation', `0 ${rotY} 0`);
+
+            sceneEl.appendChild(paddle);
+          }
+        }
+      });
+    </script>
   </head>
+
   <body>
-    <a-scene>
+    <a-scene spawn-random-paddles="count: 99; maxScale: 10.17">
       <a-assets>
         <a-asset-item id="table-obj" src="TennisTableOBJ.obj"></a-asset-item>
         <a-asset-item id="paddle-obj" src="Ping_Pong_Paddle.obj"></a-asset-item>
@@ -33,8 +70,7 @@
       </a-obj-model>
 
       <a-entity light="type: ambient; color: #999"></a-entity>
-      <a-entity light="type: directional; color: #fff; intensity: 1"
-                position="2 4 1"></a-entity>
+      <a-entity light="type: directional; color: #fff; intensity: 1" position="2 4 1"></a-entity>
 
       <a-entity position="0 1.6 0">
         <a-camera></a-camera>
