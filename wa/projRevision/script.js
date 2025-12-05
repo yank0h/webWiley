@@ -14,6 +14,7 @@ const clearSessionsBtn = document.getElementById("clearSessionsBtn");
 const showAllBtn = document.getElementById("showAllBtn");
 const showLikedBtn = document.getElementById("showLikedBtn");
 const likedSongsListEl = document.getElementById("likedSongsList");
+const versionsBarEl = document.getElementById("versionsBar");
 
 let currentSession = null;
 let hasPlaylist = false;
@@ -386,6 +387,7 @@ async function handleGenerateClick() {
 
       currentFilter.onlyLiked = false;
       renderSongs(preparedSongs, { showOnlyLiked: false });
+      renderVersionsBar();
       srAnnouncer.textContent = `Playlist created with ${preparedSongs.length} songs.`;
       promptInputEl.value = "";
       renderSessions();
@@ -417,6 +419,7 @@ async function handleGenerateClick() {
 
       currentFilter.onlyLiked = false;
       renderSongs(preparedSongs, { showOnlyLiked: false });
+      renderVersionsBar();
       srAnnouncer.textContent = `Playlist updated with ${preparedSongs.length} songs.`;
       promptInputEl.value = "";
       renderSessions();
@@ -443,6 +446,7 @@ function resetSearch() {
     "Type songs, vibes, or genres you want this playlist inspired by…";
   promptInputEl.value = "";
   renderSongs([], { showOnlyLiked: false });
+  renderVersionsBar();
   generateBtn.textContent = "Generate playlist";
   resetBtn.disabled = true;
   srAnnouncer.textContent = "Started a fresh search.";
@@ -579,6 +583,40 @@ function renderLikedSongs() {
   });
 }
 
+function renderVersionsBar() {
+  versionsBarEl.innerHTML = "";
+
+  if (!currentSession || !currentSession.iterations || !currentSession.iterations.length) {
+    return;
+  }
+
+  currentSession.iterations.forEach((iter, idx) => {
+    const btn = document.createElement("button");
+    btn.className = "version-btn";
+    btn.textContent = `v${idx + 1}`;
+    btn.setAttribute("data-version", idx);
+
+    if (idx === currentSession.iterations.length - 1) {
+      btn.classList.add("active");
+    }
+
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".version-btn").forEach((b) =>
+        b.classList.remove("active")
+      );
+      btn.classList.add("active");
+
+      const songs = currentSession.iterations[idx].songs || [];
+      currentFilter.onlyLiked = false;
+      showAllBtn.classList.add("active");
+      showLikedBtn.classList.remove("active");
+      renderSongs(songs, { showOnlyLiked: false });
+    });
+
+    versionsBarEl.appendChild(btn);
+  });
+}
+
 function loadSessionAsCurrent(id) {
   const sessions = loadSessions();
   const idx = findSessionIndex(sessions, id);
@@ -602,6 +640,7 @@ function loadSessionAsCurrent(id) {
 
   currentFilter.onlyLiked = false;
   renderSongs(getCurrentSongs(), { showOnlyLiked: false });
+  renderVersionsBar();
 
   srAnnouncer.textContent = "Loaded previous search.";
 }
@@ -627,5 +666,6 @@ clearSessionsBtn.addEventListener("click", clearSessions);
 window.addEventListener("DOMContentLoaded", () => {
   renderSessions();
   renderSongs([], { showOnlyLiked: false });
+  renderVersionsBar();
   renderLikedSongs();
 });

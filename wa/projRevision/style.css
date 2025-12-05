@@ -216,6 +216,28 @@ button.small {
   margin-top: 4px;
 }
 
+.versions-bar {
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.version-btn {
+  padding: 6px 10px;
+  background: #1c1c20;
+  border: 1px solid #2f2f34;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.82rem;
+}
+
+.version-btn.active {
+  background: #2a2a30;
+  border-color: #3a3a40;
+}
+
 .sr-only {
   position: absolute !important;
   width: 1px;
